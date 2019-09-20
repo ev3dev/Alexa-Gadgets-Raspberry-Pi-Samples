@@ -1,0 +1,48 @@
+Source: alexa-gadgets-toolkit-python
+Section: python
+Priority: optional
+Maintainer: David Lechner <david@lechnology.com>
+Build-Depends: debhelper (>= 10)
+ , dh-python
+ , python-all
+ , python-bluez
+ , python-dbus
+ , python-gi
+ , python-protobuf
+ , python-setuptools
+ , python3-all
+ , python3-bluez
+ , python3-dbus
+ , python3-gi
+ , python3-protobuf
+ , python3-setuptools
+Vcs-Git: https://github.com/ev3dev/Alexa-Gadgets-Raspberry-Pi-Samples.git
+Vcs-Browser: https://github.com/ev3dev/Alexa-Gadgets-Raspberry-Pi-Samples
+Homepage: https://github.com/alexa/Alexa-Gadgets-Raspberry-Pi-Samples
+Standards-Version: 3.9.8
+
+Package: python-agt
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}
+ , python-bluez
+ , python-dbus
+ , python-gi
+ , python-protobuf
+Description: Alexa Gadgets Raspberry Pi Samples (Python 2)
+ Quickly create an Alexa Gadget using a Raspberry Pi, Python, and the Alexa
+ Gadgets Toolkit.
+ .
+ This package provides the "agt" Python module.
+
+Package: python3-agt
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}
+ , python3-bluez
+ , python3-dbus
+ , python3-gi
+ , python3-protobuf
+Description:  Alexa Gadgets Raspberry Pi Samples (Python 3)
+ Quickly create an Alexa Gadget using a Raspberry Pi, Python, and the Alexa
+ Gadgets Toolkit.
+ .
+ This package provides the "agt" Python 3 module.
