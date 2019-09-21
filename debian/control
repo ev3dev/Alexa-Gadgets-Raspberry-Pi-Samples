@@ -27,7 +27,7 @@ Depends: ${python:Depends}, ${misc:Depends}
  , python-bluez
  , python-dbus
  , python-gi
- , python-protobuf
+ , python-protobuf (>= 3.2)
 Description: Alexa Gadgets Raspberry Pi Samples (Python 2)
  Quickly create an Alexa Gadget using a Raspberry Pi, Python, and the Alexa
  Gadgets Toolkit.
@@ -40,7 +40,7 @@ Depends: ${python3:Depends}, ${misc:Depends}
  , python3-bluez
  , python3-dbus
  , python3-gi
- , python3-protobuf
+ , python3-protobuf (>= 3.2)
 Description:  Alexa Gadgets Raspberry Pi Samples (Python 3)
  Quickly create an Alexa Gadget using a Raspberry Pi, Python, and the Alexa
  Gadgets Toolkit.
