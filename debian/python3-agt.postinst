@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+#DEBHELPER#
+
+chmod u+s /bin/hciconfig
+chmod u+s /usr/bin/sdptool

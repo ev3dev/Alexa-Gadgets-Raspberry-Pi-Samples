@@ -54,13 +54,11 @@ ObjectManagerName = 'org.freedesktop.DBus.ObjectManager'
 IO_CAPABILITY = 'NoInputNoOutput'
 
 def _hciconfig(args):
-    return subprocess.run(['/usr/bin/sudo', '-S', '-p', '', '--', '/bin/hciconfig'] + args,
-                          stdout=subprocess.PIPE, input=b'maker\n')
+    return subprocess.run(['/bin/hciconfig'] + args, stdout=subprocess.PIPE)
 
 
 def _sdptool(args):
-    return subprocess.run(['/usr/bin/sudo', '-S', '-p', '', '--', '/usr/bin/sdptool'] + args,
-                          stdout=subprocess.PIPE, input=b'maker\n')
+    return subprocess.run(['/usr/bin/sdptool'] + args, stdout=subprocess.PIPE)
 
 """
 BluetoothAdapter bluetooth interface for Alexa Gadgets application
