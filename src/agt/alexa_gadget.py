@@ -15,6 +15,8 @@ import logging.config
 import signal
 import sys
 import time
+from os import environ
+from os import makedirs
 from os import path
 from threading import Thread
 
@@ -23,7 +25,12 @@ from google.protobuf import json_format
 import agt.messages_pb2 as proto
 from agt.bluetooth import BluetoothAdapter
 
-global_config_path = path.join(path.join(path.dirname(path.dirname(path.abspath(__file__)))), '.agt.json')
+# Linux-friendly config path:
+# https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+user_config_path = path.join(environ.get(
+    'XDG_CONFIG_HOME', path.join(environ.get('HOME'), '.config')), 'agt.json')
+if not path.exists(path.dirname(user_config_path)):
+    makedirs(path.dirname(user_config_path))
 logger = logging.getLogger(__name__)
 
 # ------------------------------------------------
@@ -536,7 +543,7 @@ class AlexaGadget:
         Reads the bluetooth address of the paired Echo device from disk
         """
         try:
-            with open(global_config_path, "r") as read_file:
+            with open(user_config_path, "r") as read_file:
                 data = json.load(read_file)
                 self._peer_device_bt_addr = data.get(_ECHO_BLUETOOTH_ADDRESS, None)
         except:
@@ -547,7 +554,7 @@ class AlexaGadget:
         Writes the bluetooth address of the paired Echo device to disk
         """
         data = {_ECHO_BLUETOOTH_ADDRESS: self._peer_device_bt_addr}
-        with open(global_config_path, "w") as write_file:
+        with open(user_config_path, "w") as write_file:
             json.dump(data, write_file)
 
     def _generate_token(self, device_id, device_token):
