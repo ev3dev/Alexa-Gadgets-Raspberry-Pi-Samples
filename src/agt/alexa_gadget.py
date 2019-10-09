@@ -102,7 +102,7 @@ class AlexaGadget:
         # Get endpoint_id from the Gadget config
         self.endpoint_id = self._get_value_from_config(_GADGET_SETTINGS, _ENDPOINT_ID)
         if not self.endpoint_id:
-            self.endpoint_id = ('AGT' + self.radio_address)[:16]
+            self.endpoint_id = ('ev3dev' + self.radio_address)[:16]
 
         # Get friendly_name from the Gadget config
         self.friendly_name = self._get_value_from_config(_GADGET_SETTINGS, _FRIENDLY_NAME)
