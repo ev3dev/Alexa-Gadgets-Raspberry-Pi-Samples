@@ -1,3 +1,9 @@
+alexa-gadgets-toolkit-python (1.0.0ev3dev2) stretch; urgency=medium
+
+  * ev3dev branding of default endpoint_id
+
+ -- David Lechner <david@lechnology.com>  Wed, 09 Oct 2019 13:52:49 -0500
+
 alexa-gadgets-toolkit-python (1.0.0ev3dev1) stretch; urgency=medium
 
   * Initial release
