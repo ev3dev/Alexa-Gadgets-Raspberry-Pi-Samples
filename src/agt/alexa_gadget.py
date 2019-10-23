@@ -174,7 +174,8 @@ class AlexaGadget:
             # Set discoverable if bluetooth address is not in the configuration file.
             if not self.is_paired():
                 self.set_discoverable(True)
-                logger.info('Now in pairing mode. Pair "' + self.friendly_name + '" in the Alexa App.')
+                logger.info('Now in pairing mode. You can pair ' + self.friendly_name +
+                            ' to your Echo device using the screen on the Echo device if it has one, or the Alexa app if it DOES NOT. See the Getting Started Guide for more details.')
 
             # wait for the ctrl-c
             try:
