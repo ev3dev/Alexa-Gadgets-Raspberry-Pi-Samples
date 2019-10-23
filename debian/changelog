@@ -1,3 +1,9 @@
+alexa-gadgets-toolkit-python (1.0.0ev3dev3) stretch; urgency=medium
+
+  * More helpful info message when pairing
+
+ -- David Lechner <david@lechnology.com>  Wed, 23 Oct 2019 10:35:48 -0500
+
 alexa-gadgets-toolkit-python (1.0.0ev3dev2) stretch; urgency=medium
 
   * ev3dev branding of default endpoint_id
